@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  community_id: 1
+  name: MyString
+  surname: MyString
+  phone: MyString
+  mail: MyString
+  status: MyString
+  community: one
+
+two:
+  community_id: 1
+  name: MyString
+  surname: MyString
+  phone: MyString
+  mail: MyString
+  status: MyString
+  community: two

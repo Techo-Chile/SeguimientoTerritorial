@@ -1,0 +1,2 @@
+module CommunityNeighborsHelper
+end

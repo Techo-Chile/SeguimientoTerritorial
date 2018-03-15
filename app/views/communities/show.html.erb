@@ -1,0 +1,75 @@
+<p>
+  <strong>Nombre:</strong>
+  <%= @community.community_name %>
+</p>
+
+<p>
+  <strong>País:</strong>
+  <%= @community.country %>
+</p>
+
+<p>
+  <strong>Region:</strong>
+  <%= @community.province_region %>
+</p>
+
+<p>
+  <strong>Comuna:</strong>
+  <%= @community.municipality_location %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @community.community_status  %>
+</p>
+
+<h2>Vecinos de la comunidad</h2>
+<% @community.community_neighbors.each do |community_neighbor| %>
+  <p>
+    <strong>Nombre:</strong>
+    <%= community_neighbor.name %>
+    <%= community_neighbor.surname %>
+  </p>
+  <p>
+    <strong>Teléfono:</strong>
+    <%= community_neighbor.phone %>
+  </p>
+  <p>
+    <strong>E-mail:</strong>
+    <%= community_neighbor.mail %>
+  </p>
+  <p>
+      <%= link_to 'Editar vecino', edit_community_community_neighbor_path(@community, community_neighbor ) %>
+  </p>
+
+<% end %>
+
+<h2>Agrega un vecino</h2>
+<%= form_with(model: [ @community, @community.community_neighbors.build ]) do |form| %>
+  <p>
+    <%= form.label :Nombre %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :Apellido %><br>
+    <%= form.text_field :surname %>
+  </p>
+  <p>
+    <%= form.label :Teléfono %><br>
+    <%= form.text_field :phone %>
+  </p>
+  <p>
+    <%= form.label :"E-mail" %><br>
+    <%= form.text_field :mail %>
+  </p>
+  <p>
+    <%= form.submit "Crear nuevo vecino"%>
+  </p>
+<% end %>
+
+
+
+<td><%= link_to 'Editar', edit_community_path(@community) %></td>
+<td><%= link_to 'Borrar', community_path(@community),
+        method: :delete, data: { confirm: "¿Estás seguro de borrar?"}%></td>
+<td><%= link_to 'Volver', communities_path %></td>

@@ -1,0 +1,21 @@
+<p>
+  <strong>Title:</strong>
+  <%= @project.name %><br/>
+  <strong>Descripción:</strong>
+  <%= @project.description %><br/>
+  <strong>Tipo:</strong>
+  <%= @project.project_type %><br/>
+  <strong>Subtipo:</strong>
+  <%= @project.project_subtype %><br/>
+  <strong>Financiamiento:</strong>
+  <%= @project.financing %><br/>
+  <strong>Situación del proyecto:</strong>
+  <%= @project.project_situation %><br/>
+  <strong>Fecha de inicio:</strong>
+  <%= @project.project_start %><br/>
+  <strong>Fecha de fin:</strong>
+  <%= @project.project_end %><br/>
+  <td><%= link_to 'Borrar', project_path(@project),
+          method: :delete,
+          data: { confirm: '¿Está seguro que desea borrar el proyecto?' }%></td>
+</p>

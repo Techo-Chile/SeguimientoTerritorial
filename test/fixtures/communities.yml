@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  country: MyString
+  province_region: MyString
+  municipality_location: MyString
+  community_name: MyString
+  community_status: MyString
+
+two:
+  country: MyString
+  province_region: MyString
+  municipality_location: MyString
+  community_name: MyString
+  community_status: MyString

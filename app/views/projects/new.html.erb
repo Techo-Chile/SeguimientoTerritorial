@@ -1,0 +1,58 @@
+<h1>Nuevo proyecto</h1>
+
+<%= form_with scope: :project, url: projects_path, local: true do |form| %>
+
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@project.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @project.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= form.label :'nombre proyecto' %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :"Descripción" %><br>
+    <%= form.text_field :description %>
+  </p>
+
+  <p>
+    <%= form.label :"Tipo" %><br>
+    <%= form.select(:project_type, (['Vivienda', 'Necesidades básicas'])) %>
+  </p>
+
+  <p>
+    <%= form.label :"Subtipo" %><br>
+    <%= form.select(:project_subtype, (['Subnecesidad 1', 'Subnecesidad 2'])) %>
+  </p>
+
+  <p>
+    <%= form.label :"Financiamiento" %><br>
+    <%= form.select(:financing, (['Financiamiento 1', 'Financiamiento 2'])) %>
+  </p>
+
+  <p>
+    <%= form.label :"Fecha de inicio" %><br>
+    <%= form.date_select :project_start %>
+
+    <!-- <%= form.date_select :project_start %> -->
+
+
+  </p>
+
+
+  <p>
+    <%= form.submit "Crear proyecto" %>
+  </p>
+
+<% end %>

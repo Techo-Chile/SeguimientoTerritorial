@@ -1,0 +1,19 @@
+<h1>Listado de proyectos</h1>
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Descripción</th>
+    <th>Tipo</th>
+    <th>Subtipo</th>
+    <th colspan="3"></th>
+  </tr>
+
+  <% @projects.each do |project| %>
+    <tr>
+      <th><%= link_to project.name, project_path(project) %></th>
+      <th><%= project.description %></th>
+      <th><%= project.project_type %></th>
+      <th><%= project.project_subtype %></th>
+    </tr>
+  <% end %>
+</table>
