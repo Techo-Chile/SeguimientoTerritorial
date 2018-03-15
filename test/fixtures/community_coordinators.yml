@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  community_id: 1
+  name: MyString
+  surname: MyString
+  mail: MyString
+  phone: MyString
+  status: MyString
+  start_date: 2018-03-16
+  end_date: 2018-03-16
+  community: one
+
+two:
+  community_id: 1
+  name: MyString
+  surname: MyString
+  mail: MyString
+  phone: MyString
+  status: MyString
+  start_date: 2018-03-16
+  end_date: 2018-03-16
+  community: two

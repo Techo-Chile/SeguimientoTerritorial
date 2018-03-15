@@ -23,26 +23,29 @@
   <%= @community.community_status  %>
 </p>
 
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Teléfono</th>
+    <th>E-Mail</th>
+    <th>Estado</th>
+    <th colspan="4"></th>
+  </tr>
 <h2>Vecinos de la comunidad</h2>
 <% @community.community_neighbors.each do |community_neighbor| %>
-  <p>
-    <strong>Nombre:</strong>
-    <%= community_neighbor.name %>
-    <%= community_neighbor.surname %>
-  </p>
-  <p>
-    <strong>Teléfono:</strong>
-    <%= community_neighbor.phone %>
-  </p>
-  <p>
-    <strong>E-mail:</strong>
-    <%= community_neighbor.mail %>
-  </p>
-  <p>
-      <%= link_to 'Editar vecino', edit_community_community_neighbor_path(@community, community_neighbor ) %>
-  </p>
+<tr>
+    <th><%= community_neighbor.name %></th>
+    <th><%= community_neighbor.surname %></th>
+    <th><%= community_neighbor.phone %></th>
+    <th><%= community_neighbor.mail %></th>
+    <th><%= community_neighbor.status %></th>
 
+
+<th><th><%= link_to 'Editar vecino', edit_community_community_neighbor_path(@community, community_neighbor ) %><th>
+</tr>
 <% end %>
+<table>
 
 <h2>Agrega un vecino</h2>
 <%= form_with(model: [ @community, @community.community_neighbors.build ]) do |form| %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180312192458) do
+ActiveRecord::Schema.define(version: 20180316152015) do
 
   create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "title"
@@ -38,6 +38,20 @@ ActiveRecord::Schema.define(version: 20180312192458) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "community_coordinators", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.bigint "community_id"
+    t.string "name"
+    t.string "surname"
+    t.string "mail"
+    t.string "phone"
+    t.string "status"
+    t.date "start_date"
+    t.date "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["community_id"], name: "index_community_coordinators_on_community_id"
+  end
+
   create_table "community_neighbors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.bigint "community_id"
     t.string "name"
@@ -63,6 +77,20 @@ ActiveRecord::Schema.define(version: 20180312192458) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "work_tables", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.bigint "community_id"
+    t.string "periodicity"
+    t.date "start_date"
+    t.date "end_date"
+    t.date "next_renovation_date"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["community_id"], name: "index_work_tables_on_community_id"
+  end
+
   add_foreign_key "comments", "articles"
+  add_foreign_key "community_coordinators", "communities"
   add_foreign_key "community_neighbors", "communities"
+  add_foreign_key "work_tables", "communities"
 end
