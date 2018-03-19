@@ -45,10 +45,63 @@
 <th><th><%= link_to 'Editar vecino', edit_community_community_neighbor_path(@community, community_neighbor ) %><th>
 </tr>
 <% end %>
+</table>
+
 <table>
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Teléfono</th>
+    <th>E-Mail</th>
+    <th>Estado</th>
+    <th>Fecha de inicio</th>
+    <th>Fecha de fin</th>
+    <th colspan="4"></th>
+  </tr>
+<h2>Vecinos de la comunidad</h2>
+<% @community.community_coordinators.each do |community_coordinator| %>
+<tr>
+    <th><%= community_coordinator.name %></th>
+    <th><%= community_coordinator.surname %></th>
+    <th><%= community_coordinator.phone %></th>
+    <th><%= community_coordinator.mail %></th>
+    <th><%= community_coordinator.status %></th>
+    <th><%= community_coordinator.start_date %></th>
+    <th><%= community_coordinator.end_date %></th>
+
+
+<th><th><%= link_to 'Editar vecino', edit_community_community_coordinator_path(@community, community_coordinator ) %><th>
+</tr>
+<% end %>
+</table>
+
+
 
 <h2>Agrega un vecino</h2>
-<%= form_with(model: [ @community, @community.community_neighbors.build ]) do |form| %>
+<%= form_with(model: [ @community, @community.community_neighbors.build ]) do |form1| %>
+  <p>
+    <%= form1.label :Nombre %><br>
+    <%= form1.text_field :name %>
+  </p>
+  <p>
+    <%= form1.label :Apellido %><br>
+    <%= form1.text_field :surname %>
+  </p>
+  <p>
+    <%= form1.label :Teléfono %><br>
+    <%= form1.text_field :phone %>
+  </p>
+  <p>
+    <%= form1.label :"E-mail" %><br>
+    <%= form1.text_field :mail %>
+  </p>
+  <p>
+    <%= form1.submit "Crear nuevo vecino"%>
+  </p>
+<% end %>
+
+<h2>Agrega un coordinador</h2>
+<%= form_with(model: [ @community, @community.community_coordinators.build ]) do |form| %>
   <p>
     <%= form.label :Nombre %><br>
     <%= form.text_field :name %>
@@ -58,15 +111,20 @@
     <%= form.text_field :surname %>
   </p>
   <p>
-    <%= form.label :Teléfono %><br>
-    <%= form.text_field :phone %>
-  </p>
-  <p>
     <%= form.label :"E-mail" %><br>
     <%= form.text_field :mail %>
   </p>
   <p>
-    <%= form.submit "Crear nuevo vecino"%>
+    <%= form.label :Teléfono %><br>
+    <%= form.text_field :phone %>
+  </p>
+  <p>
+    <%= form.label :"Fecha inicio" %><br>
+    <%= form.text_field :start_date %>
+  </p>
+
+  <p>
+    <%= form.submit "Crear nuevo coordinador"%>
   </p>
 <% end %>
 
