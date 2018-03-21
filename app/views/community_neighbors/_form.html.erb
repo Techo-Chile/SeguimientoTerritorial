@@ -1,0 +1,22 @@
+<h2>Agrega un vecino</h2>
+<%= form_with(model: [ @community, @community.community_neighbors.build ], local: true ) do |form| %>
+  <p>
+    <%= form.label :Nombre %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :Apellido %><br>
+    <%= form.text_field :surname %>
+  </p>
+  <p>
+    <%= form.label :Teléfono %><br>
+    <%= form.text_field :phone %>
+  </p>
+  <p>
+    <%= form.label :"E-mail" %><br>
+    <%= form.text_field :mail %>
+  </p>
+  <p>
+    <%= form.submit "Crear nuevo vecino"%>
+  </p>
+<% end %>

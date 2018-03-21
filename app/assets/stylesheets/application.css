@@ -64,6 +64,7 @@ body {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
+    text-align: center;
 }
 
 .vertical-menu {
@@ -97,6 +98,14 @@ body {
     color: white;
 }
 
+#menu-footer {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    top: 65%;
+    z-index: 3;
+}
+
 table {
     width: 100%;
     font-size: 15px;
@@ -110,13 +119,11 @@ form {
     width: 100%;
 }
 
-input,
-a {
+input {
     width: 100%;
 }
 
-input[type=text],
-a {
+input[type=text] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -131,13 +138,19 @@ input[type=text]:focus {
     opacity: 0.5;
 }
 
-a {
-    background-color: #2192B6;
-}
-
 input[type=button],
 input[type=submit],
-input[type=reset],
+input[type=reset] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
 a {
     background-color: #4CAF50;
     border: none;
@@ -147,4 +160,5 @@ a {
     margin: 4px 2px;
     cursor: pointer;
     font-size: 18px;
+    display: block;
 }

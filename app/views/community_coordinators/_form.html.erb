@@ -1,0 +1,28 @@
+<h2>Agrega un coordinador</h2>
+<%= form_with(model: [ @community, @community.community_coordinators.build ]) do |f| %>
+
+  <p>
+    <%= f.label :Nombre %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :Apellido %><br>
+    <%= f.text_field :surname %>
+  </p>
+  <p>
+    <%= f.label :"E-mail" %><br>
+    <%= f.text_field :mail %>
+  </p>
+  <p>
+    <%= f.label :Teléfono %><br>
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+    <%= f.label :"Fecha inicio" %><br>
+    <%= f.text_field :start_date %>
+  </p>
+
+  <p>
+    <%= f.submit%>
+  </p>
+<% end %>

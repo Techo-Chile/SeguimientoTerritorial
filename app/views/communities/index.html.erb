@@ -16,6 +16,10 @@
       <th><%= community.province_region%></th>
       <th><%= community.municipality_location%></th>
       <th><%= community.community_status%></th>
+      <td><%= link_to 'Borrar', community_path(community),
+              method: :delete,
+              data: { confirm: '¿Estás seguro?' }%></td>
     </tr>
   <% end %>
 </table>
+<td><%= link_to 'Nuevo', new_community_path(@community) %></td>
