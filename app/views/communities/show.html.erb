@@ -58,7 +58,7 @@
     <th>Fecha de fin</th>
     <th colspan="4"></th>
   </tr>
-<h2>Vecinos de la comunidad</h2>
+<h2>Coordinadores de la comunidad</h2>
 <% @community.community_coordinators.each do |community_coordinator| %>
 <tr>
     <th><%= community_coordinator.name %></th>
@@ -77,56 +77,9 @@
 
 
 
-<h2>Agrega un vecino</h2>
-<%= form_with(model: [ @community, @community.community_neighbors.build ]) do |form1| %>
-  <p>
-    <%= form1.label :Nombre %><br>
-    <%= form1.text_field :name %>
-  </p>
-  <p>
-    <%= form1.label :Apellido %><br>
-    <%= form1.text_field :surname %>
-  </p>
-  <p>
-    <%= form1.label :Teléfono %><br>
-    <%= form1.text_field :phone %>
-  </p>
-  <p>
-    <%= form1.label :"E-mail" %><br>
-    <%= form1.text_field :mail %>
-  </p>
-  <p>
-    <%= form1.submit "Crear nuevo vecino"%>
-  </p>
-<% end %>
+<%= render 'community_neighbors/form' %>
 
-<h2>Agrega un coordinador</h2>
-<%= form_with(model: [ @community, @community.community_coordinators.build ]) do |form| %>
-  <p>
-    <%= form.label :Nombre %><br>
-    <%= form.text_field :name %>
-  </p>
-  <p>
-    <%= form.label :Apellido %><br>
-    <%= form.text_field :surname %>
-  </p>
-  <p>
-    <%= form.label :"E-mail" %><br>
-    <%= form.text_field :mail %>
-  </p>
-  <p>
-    <%= form.label :Teléfono %><br>
-    <%= form.text_field :phone %>
-  </p>
-  <p>
-    <%= form.label :"Fecha inicio" %><br>
-    <%= form.text_field :start_date %>
-  </p>
-
-  <p>
-    <%= form.submit "Crear nuevo coordinador"%>
-  </p>
-<% end %>
+<%= render 'community_coordinators/form' %>
 
 
 
