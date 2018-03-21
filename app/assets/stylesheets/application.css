@@ -13,3 +13,138 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+    background-color: #DDD;
+    /*background: url("/assets/bkgrnd.jpg") no-repeat center center fixed;*/
+    /*position: absolute;*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Raleway', sans-serif;
+}
+
+#techo-logo {
+    background: url("/assets/techo-logo.svg") no-repeat center center;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    z-index: 2;
+}
+
+#main-container {
+    position: fixed;
+    top: 40px;
+    left: 50%;
+    width: 700px;
+    height: 80%;
+    /*set to a negative number 1/2 of your height*/
+    margin-left: -350px;
+    /*set to a negative number 1/2 of your width*/
+    border: 0px solid #ccc;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    overflow: scroll;
+}
+
+#menu-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 600px;
+    margin-top: -350px;
+    /*set to a negative number 1/2 of your height*/
+    margin-left: -600px;
+    /*set to a negative number 1/2 of your width*/
+    border: 0px solid #ccc;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.vertical-menu {
+    top: 215px;
+    width: 200px;
+    position: relative;
+    /* Set a width if you like */
+}
+
+.vertical-menu a {
+    background-color: #eee;
+    /* Grey background color */
+    color: black;
+    /* Black text color */
+    display: block;
+    /* Make the links appear below each other */
+    padding: 12px;
+    /* Add some padding */
+    text-decoration: none;
+    /* Remove underline from links */
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc;
+    /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+    background-color: #2192B6;
+    /* Add a green color to the "active/current" link */
+    color: white;
+}
+
+table {
+    width: 100%;
+    font-size: 15px;
+}
+
+table tr {
+    line-height: 35px;
+}
+
+form {
+    width: 100%;
+}
+
+input,
+a {
+    width: 100%;
+}
+
+input[type=text],
+a {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    color: black;
+}
+
+input[type=text]:focus {
+    background-color: #2192B6;
+    color: black;
+    opacity: 0.5;
+}
+
+a {
+    background-color: #2192B6;
+}
+
+input[type=button],
+input[type=submit],
+input[type=reset],
+a {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 18px;
+}

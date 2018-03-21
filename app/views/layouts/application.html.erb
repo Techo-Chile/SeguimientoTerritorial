@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SeguimientoTerritorial</title>
+    <title>Herramienta de Seguimiento Territorial</title>
+    <link rel="shortcut icon" href="http://www.techo.org/paises/chile/wp-content/themes/techo/images/favicon.png" />
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   </head>
 
   <body>
-    <%= yield %>
+
+    <!-- left-panel -->
+    <div id="menu-container">
+      <div id="techo-logo">
+      </div>
+      <div class="vertical-menu">
+        <a href="/" class="active">Home</a>
+        <a href="#">Link 1</a>
+      </div>
+    </div>
+
+    <!-- content-panel -->
+    <div id="main-container">
+      <div id="content">
+        <%= yield %>
+      </div>
+    </div>
+    
   </body>
 </html>
