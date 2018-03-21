@@ -15,8 +15,8 @@
  */
 
 body {
-    background-color: #DDD;
-    /*background: url("/assets/bkgrnd.jpg") no-repeat center center fixed;*/
+    background-color: #FFF;
+    /*background: url("/assets/lalaland.jpg") repeat center center fixed;*/
     /*position: absolute;*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -112,7 +112,7 @@ table {
 }
 
 table tr {
-    line-height: 35px;
+    line-height: 15px;
 }
 
 form {
@@ -133,9 +133,8 @@ input[type=text] {
 }
 
 input[type=text]:focus {
-    background-color: #2192B6;
+    background-color: rgba(33, 146, 182, 0.5);
     color: black;
-    opacity: 0.5;
 }
 
 input[type=button],
@@ -152,7 +151,7 @@ input[type=reset] {
 }
 
 a {
-    background-color: #4CAF50;
+    background-color: #2192B6;
     border: none;
     color: white;
     padding: 16px 32px;
