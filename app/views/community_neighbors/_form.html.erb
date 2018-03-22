@@ -1,5 +1,4 @@
-<h2>Agrega un vecino</h2>
-<%= form_with(model: [ @community, @community.community_neighbors.build ], local: true ) do |form| %>
+<%= form_with(model: @community_neighbors, local: true ) do |form| %>
   <p>
     <%= form.label :Nombre %><br>
     <%= form.text_field :name %>
@@ -17,6 +16,6 @@
     <%= form.text_field :mail %>
   </p>
   <p>
-    <%= form.submit "Crear nuevo vecino"%>
+    <%= form.submit %>
   </p>
 <% end %>

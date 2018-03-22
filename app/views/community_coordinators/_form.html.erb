@@ -1,5 +1,4 @@
-<h2>Agrega un coordinador</h2>
-<%= form_with(model: [ @community, @community.community_coordinators.build ]) do |f| %>
+<%= form_with(model: @community_coordinators, local: true ) do |f| %>
 
   <p>
     <%= f.label :Nombre %><br>

@@ -1,7 +1,6 @@
-@import "applicationstrech" screen and (max-width: 1024px);
-@media screen and (min-width: 1024px) {
+@media screen and (max-width: 1024px) {
     body {
-        background-color: #FFF;
+        background-color: white;
         /*background: url("/assets/lalaland.jpg") repeat center center fixed;*/
         /*position: absolute;*/
         -webkit-background-size: cover;
@@ -22,10 +21,10 @@
         position: fixed;
         top: 40px;
         left: 50%;
-        width: 700px;
+        width: 500px;
         height: 80%;
         /*set to a negative number 1/2 of your height*/
-        margin-left: -350px;
+        margin-left: -250px;
         /*set to a negative number 1/2 of your width*/
         border: 0px solid #ccc;
         background-color: white;
@@ -53,7 +52,7 @@
         height: 600px;
         margin-top: -350px;
         /*set to a negative number 1/2 of your height*/
-        margin-left: -600px;
+        margin-left: -500px;
         /*set to a negative number 1/2 of your width*/
         border: 0px solid #ccc;
         background-color: white;

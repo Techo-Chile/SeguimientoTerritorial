@@ -1,0 +1,2 @@
+class WorkTableController < ApplicationController
+end
