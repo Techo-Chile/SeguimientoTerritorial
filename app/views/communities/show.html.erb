@@ -32,7 +32,8 @@
     <th>Estado</th>
     <th colspan="4"></th>
   </tr>
-<h2>Vecinos de la comunidad</h2>
+<h2>Vecinos de la comunidad</h2> <%= link_to 'Nuevo vecino', new_community_community_neighbor_url(@community) %>
+
 <% @community.community_neighbors.each do |community_neighbor| %>
 <tr>
     <th><%= community_neighbor.name %></th>
@@ -42,7 +43,7 @@
     <th><%= community_neighbor.status %></th>
 
 
-<th><th><%= link_to 'Editar vecino', edit_community_community_neighbor_path(@community, community_neighbor ) %><th>
+<th><th><%= link_to 'Editar vecino', edit_community_community_neighbor_path(@community  ) %><th>
 </tr>
 <% end %>
 </table>

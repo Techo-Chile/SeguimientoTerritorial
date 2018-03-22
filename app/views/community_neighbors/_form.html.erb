@@ -1,7 +1,7 @@
 <%= form_with(model: @community_neighbors, local: true ) do |form| %>
   <p>
     <%= form.label :Nombre %><br>
-    <%= form.text_field :name %>
+    <%= form.text_field :name ,:value =>@community_neighbor.name %>
   </p>
   <p>
     <%= form.label :Apellido %><br>

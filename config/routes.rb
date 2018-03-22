@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :communities do
     resources :community_neighbors
-    resources :community_coordinators 
+    resources :community_coordinators
   end
 
   resources :communities do
