@@ -1,13 +1,18 @@
 class CommunityCoordinatorsController < ApplicationController
-  def create
+
+  def new
     @community = Community.find(params[:community_id])
-    @community_coordinators = @community.community_coordinators.create(community_coordinators_params)
-    redirect_to community_path(@community)
   end
 
   def edit
     @community = Community.find(params[:community_id])
     @community_coordinator = @community.community_coordinators.find(params[:id])
+  end
+
+  def create
+    @community = Community.find(params[:community_id])
+    @community_coordinators = @community.community_coordinators.create(community_coordinators_params)
+    redirect_to community_path(@community)
   end
 
   def update

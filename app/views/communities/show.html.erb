@@ -43,7 +43,7 @@
     <th><%= community_neighbor.status %></th>
 
 
-<th><th><%= link_to 'Editar vecino', edit_community_community_neighbor_path(@community  ) %><th>
+<th><th><%= link_to 'Editar vecino', edit_community_community_neighbor_path(@community, community_neighbor) %><th>
 </tr>
 <% end %>
 </table>
@@ -59,7 +59,7 @@
     <th>Fecha de fin</th>
     <th colspan="4"></th>
   </tr>
-<h2>Coordinadores de la comunidad</h2>
+<h2>Coordinadores de la comunidad</h2> <%= link_to 'Nuevo coordinador', new_community_community_coordinator_url(@community) %>
 <% @community.community_coordinators.each do |community_coordinator| %>
 <tr>
     <th><%= community_coordinator.name %></th>
@@ -71,17 +71,10 @@
     <th><%= community_coordinator.end_date %></th>
 
 
-<th><th><%= link_to 'Editar vecino', edit_community_community_coordinator_path(@community, community_coordinator ) %><th>
+<th><th><%= link_to 'Editar vecino', edit_community_community_coordinator_path(@community, community_coordinator) %><th>
 </tr>
 <% end %>
 </table>
-
-
-
-<%= render 'community_neighbors/form' %>
-
-<%= render 'community_coordinators/form' %>
-
 
 
 <td><%= link_to 'Editar', edit_community_path(@community) %></td>

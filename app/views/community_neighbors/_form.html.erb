@@ -1,21 +1,21 @@
-<%= form_with(model: @community_neighbors, local: true ) do |form| %>
+<%= form_with(model: [ @community, @community.community_coordinators.build ]) do |f| %>
   <p>
-    <%= form.label :Nombre %><br>
-    <%= form.text_field :name ,:value =>@community_neighbor.name %>
+    <%= f.label :Nombre %><br>
+    <%= f.text_field :name%>
   </p>
   <p>
-    <%= form.label :Apellido %><br>
-    <%= form.text_field :surname %>
+    <%= f.label :Apellido %><br>
+    <%= f.text_field :surname %>
   </p>
   <p>
-    <%= form.label :Teléfono %><br>
-    <%= form.text_field :phone %>
+    <%= f.label :Teléfono %><br>
+    <%= f.text_field :phone %>
   </p>
   <p>
-    <%= form.label :"E-mail" %><br>
-    <%= form.text_field :mail %>
+    <%= f.label :"E-mail" %><br>
+    <%= f.text_field :mail %>
   </p>
   <p>
-    <%= form.submit %>
+    <%= f.submit %>
   </p>
 <% end %>

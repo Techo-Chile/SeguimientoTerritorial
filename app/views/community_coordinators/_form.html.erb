@@ -1,5 +1,4 @@
-<%= form_with(model: @community_coordinators, local: true ) do |f| %>
-
+<%= form_with(model: [ @community, @community.community_coordinators.build ]) do |f| %>
   <p>
     <%= f.label :Nombre %><br>
     <%= f.text_field :name %>
