@@ -16,8 +16,9 @@ default: &default
   username: root
   password: root
   socket: /var/run/mysqld/mysqld.sock
+  #Socket for Ubuntu
   #socket: /tmp/mysql.sock
-
+  #Socket for Mac 
 development:
   <<: *default
   database: SeguimientoTerritorial_development

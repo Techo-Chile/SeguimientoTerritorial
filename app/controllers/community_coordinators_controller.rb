@@ -1,7 +1,7 @@
 class CommunityCoordinatorsController < ApplicationController
-
   def new
     @community = Community.find(params[:community_id])
+    @community_coordinator = @community.community_coordinators.build
   end
 
   def edit
@@ -16,13 +16,10 @@ class CommunityCoordinatorsController < ApplicationController
   end
 
   def update
-    @community = Community.find(params[:id])
+    @community = Community.find(params[:community_id])
     @community_coordinator = @community.community_coordinators.find(params[:id])
-    if @community_coordinator.update(community_community_coordinator_params)
-      render 'edit'
-    else
-      redirect_to @community
-    end
+    @community_coordinator.update(community_coordinators_params)
+    redirect_to community_path(@community)
   end
 
   private

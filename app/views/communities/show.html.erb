@@ -22,6 +22,10 @@
   <strong>Estado:</strong>
   <%= @community.community_status  %>
 </p>
+<td><%= link_to 'Editar', edit_community_path(@community) %></td>
+<td><%= link_to 'Borrar', community_path(@community),
+        method: :delete, data: { confirm: "¿Estás seguro de borrar?"}%></td>
+<td><%= link_to 'Volver', communities_path %></td>
 
 <table>
   <tr>
@@ -75,9 +79,3 @@
 </tr>
 <% end %>
 </table>
-
-
-<td><%= link_to 'Editar', edit_community_path(@community) %></td>
-<td><%= link_to 'Borrar', community_path(@community),
-        method: :delete, data: { confirm: "¿Estás seguro de borrar?"}%></td>
-<td><%= link_to 'Volver', communities_path %></td>

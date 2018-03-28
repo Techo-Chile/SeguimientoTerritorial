@@ -1,6 +1,7 @@
 class CommunityNeighborsController < ApplicationController
   def new
     @community = Community.find(params[:community_id])
+    @community_neighbor = @community.community_neighbors.build
   end
 
   def edit
@@ -15,10 +16,11 @@ class CommunityNeighborsController < ApplicationController
   end
 
   def update
-    @community = Community.find(params[:id])
-    @community_neighbor = @community.Community_neighbors.find(params[:id])
+    @community = Community.find(params[:community_id])
+    @community_neighbor = @community.community_neighbors.find(params[:id])
+    @community_neighbor.update(community_neighbors_params)
+    redirect_to community_path(@community)
   end
-
 
   private
     def community_neighbors_params
