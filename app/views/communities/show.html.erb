@@ -36,7 +36,7 @@
     <th>Estado</th>
     <th colspan="4"></th>
   </tr>
-<h2>Vecinos de la comunidad</h2> <%= link_to 'Nuevo vecino', new_community_community_neighbor_url(@community) %>
+<h2>Vecinos de la comunidad</h2>
 
 <% @community.community_neighbors.each do |community_neighbor| %>
 <tr>
@@ -63,7 +63,9 @@
     <th>Fecha de fin</th>
     <th colspan="4"></th>
   </tr>
-<h2>Coordinadores de la comunidad</h2> <%= link_to 'Nuevo coordinador', new_community_community_coordinator_url(@community) %>
+<%= link_to 'Nuevo vecino', new_community_community_neighbor_url(@community) %>
+
+<h2>Coordinadores de la comunidad</h2>
 <% @community.community_coordinators.each do |community_coordinator| %>
 <tr>
     <th><%= community_coordinator.name %></th>
@@ -79,3 +81,4 @@
 </tr>
 <% end %>
 </table>
+<%= link_to 'Nuevo coordinador', new_community_community_coordinator_url(@community) %>
